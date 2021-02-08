@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'consentform',
     loadChildren: () => import('./pages/consentform/consentform.module').then( m => m.ConsentformPageModule)
+  },
+  {
+    path: 'vulnerablechildren',
+    loadChildren: () => import('./pages/vulnerablechildren/vulnerablechildren.module').then( m => m.VulnerablechildrenPageModule)
   }
 ];
 @NgModule({
