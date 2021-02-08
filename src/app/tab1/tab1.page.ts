@@ -22,8 +22,21 @@ export class Tab1Page {
     this.navController.navigateForward('caresupport-checklist');
     loading.dismiss();
   }
-  gotoConsentForm(){
+  async gotoConsentForm(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading Consent Form...',
+  });
+  await loading.present();
     this.navController.navigateForward('consentform');
+    loading.dismiss();
+  }
+  async gotoVCServiceForm(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading VC Service Form...',
+  });
+  await loading.present();
+    this.navController.navigateForward('vulnerablechildren');
+    loading.dismiss();
   }
   initDB(){
     this.sqlite.create({
