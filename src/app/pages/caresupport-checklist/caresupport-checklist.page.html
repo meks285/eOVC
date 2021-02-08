@@ -1,0 +1,371 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title color="danger">
+      Care & Support Checklist<sup>eOVC</sup>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content [fullscreen]="true">
+    <ion-card-header color="tertiary">Facility Details</ion-card-header>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">State</span></ion-label>
+      <ion-input type="text" [(ngModel)]="state" required></ion-input>          
+      </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">LGA</span></ion-label>
+      <ion-input type="text" [(ngModel)]="lga" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Facility</span></ion-label>
+      <ion-input type="text" [(ngModel)]="facility" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Ward</span></ion-label>
+      <ion-input type="text" [(ngModel)]="ward" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Community</span></ion-label>
+      <ion-input type="text" [(ngModel)]="community" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Name of CBO</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="cbo_name">
+        <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+        <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+        <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+        <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+        <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+        <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+        <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+        <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+        <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+        <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+        <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+        <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+        <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+        <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+        <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+        <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+        <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+        <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+        <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+        <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+        <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+      </ion-select>
+        </ion-item>
+    <ion-card-header color="tertiary">Beneficiary Details</ion-card-header>
+    <ion-item lines="full">
+      <ion-label ><span style="font-weight: bold;">Date of Assessment: </span></ion-label>
+      <ion-input type="date" [(ngModel)]="assessment_date" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">UNIQUE ID/NUMBER: </span></ion-label>
+      <ion-input type="text" [(ngModel)]="unique_id" required placeholder="(State code / LGA code  / Org code/ HH  serial /VC serial No)"></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Name of Beneficiary: </span></ion-label>
+      <ion-input type="text" [(ngModel)]="beneficiary_name" required ></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label ><span style="font-weight: bold;">SEX: </span></ion-label>
+      <select name="sex" id="sex" [(ngModel)]="sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>      
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label ><span style="font-weight: bold;">AGE: </span></ion-label>
+      <ion-input type="text" [(ngModel)]="age_yrs" required placeholder="YEARS"></ion-input>          
+      <ion-input type="text" [(ngModel)]="age_mths" required placeholder="MONTHS"></ion-input>          
+    </ion-item>
+    <ion-item>
+      <ion-textarea id="address" name="address" [(ngModel)]="address" placeholder="Address"></ion-textarea>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Caregivers Phone: </span></ion-label>
+      <ion-input type="number" [(ngModel)]="caregiver_phone" required ></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">ART UID NO: </span></ion-label>
+      <ion-input type="text" [(ngModel)]="art_uid_no" required ></ion-input>          
+    </ion-item>
+  <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>S/N</th><th>SECTION A</th><th>Yes</th><th>No</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td>Beneficiary is currently coughing?</td>
+      <td>
+        <input type="radio" id="cough_yes" name="coughing" [(ngModel)]="sectiona_1" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="cough_no" name="coughing"  [(ngModel)]="sectiona_1" value="No">
+        </td>
+      </tr>
+      <tr>
+        <td>2.</td><td>Has the beneficiary been losing weight recently or is not growing properly?</td>
+        <td>
+          <input type="radio" id="weightloss_yes" name="weightloss"  [(ngModel)]="sectiona_2" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="weightloss_no" name="weightloss" [(ngModel)]="sectiona_2" value="No">      
+        </td>
+      </tr>
+      <tr>
+        <td>3.</td><td>Has the beneficiary been having fever for a long period of time?</td>
+        <td>
+          <input type="radio" id="fever_yes" name="fever"  [(ngModel)]="sectiona_3" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="fever_no" name="fever" [(ngModel)]="sectiona_3" value="No">      
+        </td>
+      </tr>
+      <tr>
+        <td>4.</td><td>Has the beneficiary been having night sweats?</td>
+        <td>
+          <input type="radio" id="nightsweats_yes" name="nightsweats"  [(ngModel)]="sectiona_4" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="nightsweats_no" name="nightsweats" [(ngModel)]="sectiona_4" value="No">      
+        </td>
+      </tr>
+      <tr>
+        <td>5.</td><td>Does the beneficiary have swellings on the neck?</td>
+        <td>
+          <input type="radio" id="swellings_yes" name="swellings"  [(ngModel)]="sectiona_5" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="swellings_no" name="swellings" [(ngModel)]="sectiona_5" value="No">      
+        </td>
+      </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th>S/N</th><th>SECTION B</th><th></th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td>Is the beneficiary currently on ART?</td>
+    <td>
+      <input type="radio" id="curronart_yes" name="curronart" [(ngModel)]="sectionb_1" value="Yes">
+      <label for="curronart_yes">Yes</label><br><br>
+        <input type="radio" id="curronart_no" name="curronart"  [(ngModel)]="sectionb_1" value="No">
+        <label for="curronart_no">No</label><br>
+      </td>
+    </tr>
+  <tr>
+    <td>2.</td>
+    <td>Which health facility is beneficiary currently receiving ART?(Please write the name and address of the health facility)</td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="artfacilityname" name="artfacilityname" [(ngModel)]="sectionb_2" placeholder="Facility Name">
+      <textarea style="margin: 0px; height: 87px; width: 153px;" id="artfacility_address" name="artfacility_address" [(ngModel)]="sectionb_2a" placeholder="Facility Address"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>3.</td>
+    <td>Date of Last Drug Pickup: </td>
+    <td>
+      <input type="date" id="drugpickup_date" name="drugpickup_date" [(ngModel)]="sectionb_3" value="Yes">
+      </td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>What is beneficiary’s current regimen and duration (days) of refill? </td>
+      <td>
+      <select style="margin: 0px; width: 153px;" name="currentRegimen" id="currentRegimen" [(ngModel)]="sectionb_4">
+        <optgroup label="Adult ART">
+          <option value="Tenofovir/Lamivudine/Efavirenz - 300/300/600mg">Tenofovir/Lamivudine/Efavirenz - 300/300/600mg</option>
+          <option value="Tenofovir/Lamivudine/Dolutegravir - 300/300/50mg">Tenofovir/Lamivudine/Dolutegravir - 300/300/50mg</option>
+          <option value="Tenofovir/Lamivudine/Efavirenz - 300/300/400mg">Tenofovir/Lamivudine/Efavirenz - 300/300/400mg</option>
+          <option value="Lamivudine/Zidovudine/Nevirapine - 150/300/200mg">Lamivudine/Zidovudine/Nevirapine - 150/300/200mg</option>
+          <option value="Tenofovir/Lamivudine - 300/300mg">Tenofovir/Lamivudine - 300/300mg</option>
+          <option value="Lamivudine/Zidovudine - 300/150mg">Lamivudine/Zidovudine - 300/150mg</option>
+          <option value="Abacavir/Lamivudine - 600/300mg">Abacavir/Lamivudine - 600/300mg</option>
+          <option value="Efavirenz - 600mg">Efavirenz - 600mg</option>
+          <option value="Zidovudine - 300mg">Zidovudine - 300mg</option>
+          <option value="Atazanavir/Ritonavir - 300/100mg">Atazanavir/Ritonavir - 300/100mg</option>
+          <option value="Lopinavir/Ritonavir - 200/50mg">Lopinavir/Ritonavir - 200/50mg</option>
+          <option value="Darunavir - 600mg">Darunavir - 600mg</option>
+          <option value="Ritonavir - 100mg">Ritonavir - 100mg</option>
+          <option value="Darunavir/Ritonavir - 400/50mg">Darunavir/Ritonavir - 400/50mg</option>
+          <option value="Dolutegravir - 50mg">Dolutegravir - 50mg</option>
+    </optgroup>
+    <optgroup label="Pediatric ART">
+          <option value="Lamivudine/Zidovudine/Nevirapine - 30/60/50mg">Lamivudine/Zidovudine/Nevirapine - 30/60/50mg</option>
+          <option value="Abacavir/Lamivudine - 60/30mg">Abacavir/Lamivudine - 60/30mg</option>
+          <option value="Lamivudine/Zidovudine - 60/30mg">Lamivudine/Zidovudine - 60/30mg</option>
+          <option value="Efavirenz - 200mg">Efavirenz - 200mg</option>
+    </optgroup>      
+  </select>      
+  <input style="margin: 0px; width: 153px;" type="number" id="currentRegimen_duration" name="currentRegimen_duration" [(ngModel)]="sectionb_4b" placeholder="Duration">
+    </td>
+    </tr>	
+    <tr>
+      <td>5.</td>
+      <td>Has the beneficiary missed his/her ARVs more than two doses in a month in the last 3 months?    If “No”, go to Q7</td>
+      <td>
+        <input type="radio" id="missedarv2doses_yes" name="missedarv2doses" [(ngModel)]="sectionb_5" value="Yes" (click)="sectionb_5YesChk()">
+        <label for="dmissedarv2doses_yes">Yes</label><br><br>
+          <input type="radio" id="missedarv2doses_no" name="missedarv2doses"  [(ngModel)]="sectionb_5" value="No" (click)="sectionb_5NoChk()">
+          <label for="missedarv2doses_no">No</label>
+        </td>
+      </tr>
+      <tr *ngIf="sectionb_5Yes==1">
+        <td>6.</td>
+        <td>Check for reasons why people miss ARVs</td>
+        <td>
+        <select style="margin: 0px; width: 153px;" name="missarvreason" id="missarvreason" [(ngModel)]="sectionb_6" multiple>
+          <option value="Drug side effect">Drug side effect</option>
+          <option value="Stigma">Stigma</option>
+          <option value="Unceasing demands of daily life">Unceasing demands of daily life</option>
+          <option value="Feeling of hopelessness">Feeling of hopelessness</option>
+          <option value="Feeling well">Feeling well</option>
+          <option value="Lack of Food">Lack of Food</option>
+          <option value="Religious beliefs">Religious beliefs</option>
+          <option value="Lack of motivation">Lack of motivation</option>
+          <option value="Others">Others</option>
+        </select>     
+        <input style="margin: 0px; width: 153px;" type="text" id="missarvreason_other" name="missarvreason_other" [(ngModel)]="sectionb_6_other" placeholder="Others">
+      </td>
+   </tr> 
+   <tr *ngIf="sectionb_5Yes==0">
+    <td>7.</td>
+    <td>Has beneficiary carried out viral load test in the last one year? If “No”, go to Q11</td>
+    <td>
+      <input type="radio" id="vltest_yes" name="vltest" [(ngModel)]="sectionb_7" value="Yes" (click)="sectionb_7YesChk()">
+      <label for="vltest_yes">Yes</label><br><br>
+        <input type="radio" id="vltest_no" name="vltest"  [(ngModel)]="sectionb_7" value="No" (click)="sectionb_7NoChk()">
+        <label for="vltest_no">No</label><br><br>
+        <input type="radio" id="vltest_ne" name="vltest"  [(ngModel)]="sectionb_7" value="Not Eligible" (click)="sectionb_7NoChk()">
+        <label for="vltest_ne">Not Eligible</label><br>
+      </td>
+    </tr>  
+    <tr *ngIf="sectionb_7Yes==1">
+      <td>8.</td>
+      <td>When was the viral load test done?</td>
+      <td>
+        <input style="margin: 0px; width: 153px;" type="date" id="vltestdate" name="vltestdate" [(ngModel)]="sectionb_8">
+      </td>
+    </tr>  
+  	<tr *ngIf="sectionb_7Yes==1">
+      <td>9.</td>
+      <td>Do you know the viral load test result? If No, go to Q11</td>
+      <td>
+        <input type="radio" id="vltestknow_yes" name="vltestknow" [(ngModel)]="sectionb_9" value="Yes" (click)="sectionb_9YesChk()">
+        <label for="vltestknow_yes">Yes</label><br><br>
+          <input type="radio" id="vltestknow_no" name="vltestknow"  [(ngModel)]="sectionb_9" value="No" (click)="sectionb_9NoChk()">
+          <label for="vltestknow_no">No</label><br>
+        </td>
+      </tr>  
+    <tr *ngIf="sectionb_9Yes==1">
+      <td>10.</td>
+      <td>What was the result? (copies/ml)</td>
+      <td>
+        <input style="margin: 0px; width: 153px;" type="number" id="vltestresult" name="vltestresult" [(ngModel)]="sectionb_10">
+      </td>
+    </tr>  
+    <tr *ngIf="sectionb_7Yes==0 || sectionb_9Yes==0 ">
+      <td>11.</td>
+      <td>Why was the viral load not done?</td>
+      <td>
+        <textarea style="margin: 0px; height: 87px; width: 153px;" id="reason_novl" name="reason_novl" [(ngModel)]="sectionb_11" placeholder="Specify"></textarea>
+      </td>
+      </tr>  
+      <tr>
+        <td>12.</td>
+        <td>Has beneficiary received transportation support to access ARVs in the last six months?</td>
+        <td>
+          <input type="radio" id="transforarv_yes" name="transforarv" [(ngModel)]="sectionb_12" value="Yes">
+          <label for="transforarv_yes">Yes</label><br><br>
+            <input type="radio" id="transforarv_no" name="transforarv"  [(ngModel)]="sectionb_12" value="No">
+            <label for="transforarv_no">No</label><br><br>
+        <input style="margin: 0px; width: 153px;" type="number" id="transforarv_mths" name="transforarv_mths" [(ngModel)]="sectionb_12_mths" placeholder="If Yes, Specify Months">
+         </td>
+        </tr>  	
+        <tr>
+          <td>13.</td>
+          <td>Has beneficiary experienced sores rash pain discharge bleeding from the vagina or penis in the last six months?</td>
+          <td>
+            <input type="radio" id="sideinfections_yes" name="sideinfections" [(ngModel)]="sectionb_13" value="Yes">
+            <label for="sideinfections_yes">Yes</label><br><br>
+              <input type="radio" id="sideinfections_no" name="sideinfections"  [(ngModel)]="sectionb_13" value="No">
+              <label for="sideinfections_no">No</label><br>
+            </td>      
+          </tr>  	
+          <tr>
+            <td>14.</td>
+            <td>Next clinical appointment date</td>
+            <td>
+              <input style="margin: 0px; width: 153px;" type="date" id="nextapptdate" name="nextapptdate" [(ngModel)]="sectionb_14">
+            </td>
+          </tr>	
+            <tr>
+            <td>15.</td>
+            <td>Has beneficiary disclosed HIV status to his/her partner?</td>
+            <td>
+              <input type="radio" id="hivstatusdisclose_yes" name="hivstatusdisclose" [(ngModel)]="sectionb_15" value="Yes">
+              <label for="hivstatusdisclose_yes">Yes</label><br><br>
+                <input type="radio" id="hivstatusdisclose_no" name="hivstatusdisclose"  [(ngModel)]="sectionb_15" value="No">
+                <label for="hivstatusdisclose_no">No</label><br>
+              </td>
+            </tr>                  
+  </table>
+  <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>SECTION C</th><th>Yes</th><th>No</th>
+    </tr>
+    <tr>
+      <td>16.) Is the viral load less than 1,000copies/ml</td>
+      <td>
+        <input type="radio" id="vl_less_1k_yes" name="vl_less_1k" [(ngModel)]="sectionc_16" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="vl_less_1k_no" name="vl_less_1k"  [(ngModel)]="sectionc_16" value="No">
+        </td>
+      </tr>
+    <tr>
+        <td>17.) If “No”, completed EAC?</td>
+        <td>
+          <input type="radio" id="eac_complete_yes" name="eac_complete" [(ngModel)]="sectionc_17" value="Yes">
+          </td>
+          <td>
+            <input type="radio" id="eac_complete_no" name="eac_complete"  [(ngModel)]="sectionc_17" value="No">
+        </td>
+    </tr>    
+    <tr>
+      <td>18.) Viral Load result after EAC: </td>
+      <td colspan="2">
+        <input style="margin: 0px; width: 120px;" type="text" id="vlresultaftereac" name="vlresultaftereac" [(ngModel)]="sectionb_18" placeholder="copies/ml">
+      </td>
+    </tr>	
+</table>  
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr>
+    <td>Service provider Name: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="sp_name" name="sp_name" [(ngModel)]="sp_name">
+    </td>
+  </tr>	
+  <tr>
+    <td>Designation: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="designation" name="designation" [(ngModel)]="designation">
+    </td>
+  </tr>	
+  <tr>
+    <td>Phone Number: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="number" id="phoneno" name="phoneno" [(ngModel)]="phoneno">
+    </td>
+  </tr>	
+  <tr>
+    <td>Date: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="date" id="report_date" name="report_date" [(ngModel)]="report_date">
+    </td>
+  </tr>	
+</table>
+<ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
+</ion-content>

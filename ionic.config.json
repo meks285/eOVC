@@ -1,0 +1,7 @@
+{
+  "name": "eovc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

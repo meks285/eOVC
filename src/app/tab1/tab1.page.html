@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger" class="no-border">
+    <ion-title>
+      eOVC
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+  <ion-content [fullscreen]="true">
+    <table mat-table style="width:100%; border: 1px solid black;">
+      <tr style="background-color: #eb445a;">
+        <th></th><th></th><th></th>
+      </tr>
+      <tr>
+    <td>
+            <ion-card color="primary" (click)="gotoCSChecklist()">
+              <ion-card-header style="font-weight: bold; font-family:serif;">
+                CARE & SUPPORT
+              </ion-card-header>
+              <ion-card-content>
+                <ion-avatar>
+                  <img src="../../assets/images/images/hospital.png">
+                </ion-avatar>             
+                CHECKLIST
+              </ion-card-content>
+            </ion-card>
+    </td>
+    <td>
+            <ion-card color="primary" (click)="gotoConsentForm()">
+              <ion-card-header style="font-weight: bold; font-family:serif;">
+                CONSENT FORM
+              </ion-card-header>
+              <ion-card-content>
+                <ion-avatar>
+                  <img src="../../assets/images/images/community.png">
+                </ion-avatar>             
+                CF
+              </ion-card-content>
+            </ion-card>
+    </td>
+  </tr>	
+</table>
+</ion-content>

@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title color="danger">
+      Consent Form<sup>eOVC</sup>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card-header color="tertiary">CONSENT STATEMENT</ion-card-header>
+  I, <input type="text" [(ngModel)]="household_head_name" placeholder="Name of Household Head" required /> of <input type="text" [(ngModel)]="community_name" placeholder="Name of community" required /> in 
+  <input type="text" [(ngModel)]="ward_name" placeholder="(name of political ward)" required /> ward,<input type="text" [(ngModel)]="lga" placeholder="(Name of LGA)" required /> LGA of <input type="text" [(ngModel)]="state" placeholder="(State of residence)" required /> State, acknowledge that the 
+  <input type="text" [(ngModel)]="project" placeholder="(Insert name of Project)" required /> OVC program and its activities have been explained to me and I hereby voluntarily give informed consent for my household to 
+participate in the program implemented by<input type="text" [(ngModel)]="cbo" placeholder="(Name of CBO/CSO)" required />
+with support from  <input type="text" [(ngModel)]="implementing_partner" placeholder="(Name of Implementing Partner)" required /> with funding from <input type="text" [(ngModel)]="donor" placeholder="(Name of donor)" required />
+<ion-card-header color="tertiary">CONSENT DETAILS</ion-card-header>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th></th><th>Yes</th><th>No</th>
+  </tr>
+  <tr>
+    <td>I also agree to “shared confidentiality” with other staff for purpose of supporting my household</td>
+    <td>
+      <input type="radio" id="sharedconfidentiality_yes" name="sharedconfidentiality" [(ngModel)]="sharedconfidentiality" value="Yes">
+      </td>
+      <td>
+        <input type="radio" id="sharedconfidentiality_no" name="sharedconfidentiality"  [(ngModel)]="sharedconfidentiality" value="No">
+      </td>
+    </tr>
+    <tr>
+      <td>I consent to pictures being taken of my household in the course of participation in the program</td>
+      <td>
+        <input type="radio" id="pictureconsent_yes" name="pictureconsent" [(ngModel)]="pictureconsent" value="Yes">
+        </td>
+        <td>
+          <input type="radio" id="pictureconsent_no" name="pictureconsent"  [(ngModel)]="pictureconsent" value="No">
+        </td>
+      </tr>
+      <tr>
+        <td>I consent to pictures of my household being shared on program reports, newsletters, journals and the website of APIN</td>
+        <td>
+          <input type="radio" id="pictureconsentshared_yes" name="pictureconsentshared" [(ngModel)]="pictureconsentshared" value="Yes">
+          </td>
+          <td>
+            <input type="radio" id="pictureconsentshared_no" name="pictureconsentshared"  [(ngModel)]="pictureconsentshared" value="No">
+          </td>
+        </tr>
+        <tr>
+          <td>I consent that my child(ren)/ward could participate in the program related activities</td>
+          <td>
+            <input type="radio" id="consentchildren_yes" name="consentchildren" [(ngModel)]="consentchildren" value="Yes">
+            </td>
+            <td>
+              <input type="radio" id="consentchildren_no" name="consentchildren"  [(ngModel)]="consentchildren" value="No">
+            </td>
+          </tr>
+          <tr>
+            <td>I consent that the organization and/or its staff should not be held liable at the event of injuries that may occur to my child(ren)/ward’s as a result of his/her/their participation in program-related activity(ies)</td>
+            <td>
+              <input type="radio" id="consentorgliable_yes" name="consentorgliable" [(ngModel)]="consentorgliable" value="Yes">
+              </td>
+              <td>
+                <input type="radio" id="consentorgliable_no" name="consentorgliable"  [(ngModel)]="consentorgliable" value="No">
+    </td>
+  </tr>
+</table>
+<ion-card-header color="tertiary">HOUSEHOLD HEAD DATA</ion-card-header>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Name of Household Head/Caregiver: </span></ion-label>
+  <ion-input type="text" [(ngModel)]="household_caregiver_name" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Signature/Initials: </span></ion-label>
+  <ion-input type="text" [(ngModel)]="household_caregiver_initials" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label ><span style="font-weight: bold;">Date: </span></ion-label>
+  <ion-input type="date" [(ngModel)]="householdheaddata_date" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Phone Number: </span></ion-label>
+  <ion-input type="number" [(ngModel)]="householdheaddata_phone" required ></ion-input>          
+</ion-item>
+<ion-card-header color="tertiary">WITNESS DATA</ion-card-header>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Name of Witness: </span></ion-label>
+  <ion-input type="text" [(ngModel)]="witness_name" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Signature/Initials: </span></ion-label>
+  <ion-input type="text" [(ngModel)]="witness_initials" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label ><span style="font-weight: bold;">Date: </span></ion-label>
+  <ion-input type="date" [(ngModel)]="witnessdata_date" required ></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Phone Number: </span></ion-label>
+  <ion-input type="number" [(ngModel)]="witnessdata_phone" required ></ion-input>          
+</ion-item>
+<ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
+</ion-content>
