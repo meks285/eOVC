@@ -1,9 +1,509 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>vulnerablechildren</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title color="danger">
+      Vulnerable Children<sup>eOVC</sup>
+    </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 <ion-content>
-
+  <ion-card-header color="tertiary">Facility Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">State</span></ion-label>
+    <ion-input type="text" [(ngModel)]="state" required></ion-input>          
+    </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">LGA</span></ion-label>
+    <ion-input type="text" [(ngModel)]="lga" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Facility</span></ion-label>
+    <ion-input type="text" [(ngModel)]="facility" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Ward</span></ion-label>
+    <ion-input type="text" [(ngModel)]="ward" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Community</span></ion-label>
+    <ion-input type="text" [(ngModel)]="community" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Organization Name</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="cbo_name">
+      <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+      <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+      <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+      <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+      <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+      <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+      <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+      <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+      <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+      <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+      <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+      <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+      <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+      <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+      <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+      <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+      <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+      <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+      <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+      <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+      <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card-header color="tertiary">Child's Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">VC UNIQUE ID: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="unique_id" required placeholder="(State code / LGA code  / Org code/ HH  serial /VC serial No)"></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Child's Name: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="name_of_child" required ></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">SEX: </span></ion-label>
+    <select name="sex" id="sex" [(ngModel)]="sex">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>      
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">AGE: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="age_yrs" required placeholder="YEARS"></ion-input>          
+    <ion-input type="text" [(ngModel)]="age_mths" required placeholder="MONTHS"></ion-input>          
+  </ion-item>
+  <ion-item>
+    <ion-textarea id="address" name="address" [(ngModel)]="address" placeholder="Address of Child"></ion-textarea>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Caregivers Name: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="caregiver_name" required ></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Caregivers Tel: </span></ion-label>
+    <ion-input type="number" [(ngModel)]="caregiver_phone" required ></ion-input>          
+  </ion-item>
+  <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>SERVICES (HEALTHY)</th><th>CHECK/DATE</th>
+    </tr>
+    <tr>
+      <td>1.) Health education</td>
+      <td>
+        <input type="checkbox" id="checked1" name="checked1" [(ngModel)]="checked1" value="Yes">
+          <br>
+        <input type="date" id="service_date1" name="service_date1"  [(ngModel)]="service_date1">
+        </td>
+    </tr>
+    <tr>
+      <td>2.) Insecticide treated bed net (LLINs)</td>
+      <td>
+        <input type="checkbox" id="checked2" name="checked2" [(ngModel)]="checked2" value="Yes">
+        <br>
+        <input type="date" id="service_date2" name="service_date2"  [(ngModel)]="service_date2">
+        </td>
+    </tr>
+    <tr>
+      <td>3.) Household health insurance coverage</td>
+      <td>
+        <input type="checkbox" id="checked3" name="checked3" [(ngModel)]="checked3" value="Yes">
+        <br>
+        <input type="date" id="service_date3" name="service_date3"  [(ngModel)]="service_date3">
+        </td>
+    </tr>
+    <tr>
+      <td>4.) Water, Sanitation and Hygiene (WASH) messaging </td>
+      <td>
+        <input type="checkbox" id="checked4" name="checked4" [(ngModel)]="checked4" value="Yes">
+        <br>
+        <input type="date" id="service_date4" name="service_date4"  [(ngModel)]="service_date4">
+        </td>
+    </tr>
+    <tr>
+      <td>5.) Community HIV services – HTS </td>
+      <td>
+        <input type="checkbox" id="checked5" name="checked5" [(ngModel)]="checked5" value="Yes">
+        <br>
+        <input type="date" id="service_date5" name="service_date5"  [(ngModel)]="service_date5">
+        </td>
+    </tr>
+    <tr>
+      <td>6.) HIV services referral – HTS/EID/ART/<br>VL/TB/STIs</td>
+      <td>
+        <input type="checkbox" id="checked6" name="checked6" [(ngModel)]="checked6" value="Yes">
+        <br>
+        <input type="date" id="service_date6" name="service_date6"  [(ngModel)]="service_date6">
+        </td>
+    </tr>
+    <tr>
+      <td>7.) Age-appropriate counselling and HIV disclosure support</td>
+      <td>
+        <input type="checkbox" id="checked7" name="checked7" [(ngModel)]="checked7" value="Yes">
+        <br>
+        <input type="date" id="service_date7" name="service_date7"  [(ngModel)]="service_date7">
+        </td>
+    </tr>
+    <tr>
+      <td>8.) Age-appropriate HIV treatment literacy (for CLHIV)</td>
+      <td>
+        <input type="checkbox" id="checked8" name="checked8" [(ngModel)]="checked8" value="Yes">
+        <br>
+        <input type="date" id="service_date8" name="service_date8"  [(ngModel)]="service_date8">
+        </td>
+    </tr>
+    <tr>
+      <td>9.) ART adherence support (including transportation support)</td>
+      <td>
+        <input type="checkbox" id="checked9" name="checked9" [(ngModel)]="checked9" value="Yes">
+        <br>
+        <input type="date" id="service_date9" name="service_date9"  [(ngModel)]="service_date9">
+        </td>
+    </tr>
+    <tr>
+      <td>10.) Structured PLHA support group</td>
+      <td>
+        <input type="checkbox" id="checked10" name="checked10" [(ngModel)]="checked10" value="Yes">
+        <br>
+        <input type="date" id="service_date10" name="service_date10"  [(ngModel)]="service_date10">
+        </td>
+    </tr>
+    <tr>
+      <td>11.) Community TB symptom screening</td>
+      <td>
+        <input type="checkbox" id="checked11" name="checked11" [(ngModel)]="checked11" value="Yes">
+        <br>
+        <input type="date" id="service_date11" name="service_date11"  [(ngModel)]="service_date11">
+        </td>
+    </tr>
+    <tr>
+      <td>12.) Food package (s)/ Nutritional supplements</td>
+      <td>
+        <input type="checkbox" id="checked12" name="checked12" [(ngModel)]="checked12" value="Yes">
+        <br>
+        <input type="date" id="service_date12" name="service_date12"  [(ngModel)]="service_date12">
+        </td>
+    </tr>
+    <tr>
+      <td>13.) Nutrition assessment, counselling, and support (NACS)</td>
+      <td>
+        <input type="checkbox" id="checked13" name="checked13" [(ngModel)]="checked13" value="Yes">
+        <br>
+        <input type="date" id="service_date13" name="service_date13"  [(ngModel)]="service_date13">
+        </td>
+    </tr>
+    <tr>
+      <td>14.) Growth Monitoring</td>
+      <td>
+        <input type="checkbox" id="checked14" name="checked14" [(ngModel)]="checked14" value="Yes">
+        <br>
+        <input type="date" id="service_date14" name="service_date14"  [(ngModel)]="service_date14">
+        </td>
+    </tr>
+    <tr>
+      <td>15.) Adolescent HIV Prevention and SRH services</td>
+      <td>
+        <input type="checkbox" id="checked15" name="checked15" [(ngModel)]="checked15" value="Yes">
+        <br>
+        <input type="date" id="service_date15" name="service_date15"  [(ngModel)]="service_date15">
+        </td>
+    </tr>
+    <tr>
+      <td>16.) Referral (specify)</td>
+      <td>
+        <input type="checkbox" id="checked16" name="checked16" [(ngModel)]="checked16" value="Yes">
+        <br>
+        <input type="date" id="service_date16" name="service_date16"  [(ngModel)]="service_date16">
+        </td>
+    </tr>
+  </table>
+  <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>SERVICES (SAFE)</th><th>CHECK/DATE</th>
+    </tr>
+    <tr>
+      <td>17.) Structured PSS related to family conflict mitigation </td>
+      <td>
+        <input type="checkbox" id="checked17" name="checked17" [(ngModel)]="checked17" value="Yes">
+        <br>
+        <input type="date" id="service_date17" name="service_date17"  [(ngModel)]="service_date17">
+        </td>
+    </tr>
+    <tr>
+      <td>18.) Clothing support</td>
+      <td>
+        <input type="checkbox" id="checked18" name="checked18" [(ngModel)]="checked18" value="Yes">
+        <br>
+        <input type="date" id="service_date18" name="service_date18"  [(ngModel)]="service_date18">
+        </td>
+    </tr>
+    <tr>
+      <td>19.) Emergency shelter/care facility</td>
+      <td>
+        <input type="checkbox" id="checked19" name="checked19" [(ngModel)]="checked19" value="Yes">
+        <br>
+        <input type="date" id="service_date19" name="service_date19"  [(ngModel)]="service_date19">
+        </td>
+    </tr>
+    <tr>
+      <td>20.) Post-violence trauma counselling from a trained provider</td>
+      <td>
+        <input type="checkbox" id="checked20" name="checked20" [(ngModel)]="checked20" value="Yes">
+        <br>
+        <input type="date" id="service_date20" name="service_date20"  [(ngModel)]="service_date20">
+        </td>
+    </tr>
+    <tr>
+      <td>21.) Recreational activity (e.g., kids and youth clubs)</td>
+      <td>
+        <input type="checkbox" id="checked21" name="checked21" [(ngModel)]="checked21" value="Yes">
+        <br>
+        <input type="date" id="service_date21" name="service_date21"  [(ngModel)]="service_date21">
+        </td>
+    </tr>
+    <tr>
+      <td>22.) Structured safe spaces intervention</td>
+      <td>
+        <input type="checkbox" id="checked22" name="checked22" [(ngModel)]="checked22" value="Yes">
+        <br>
+        <input type="date" id="service_date22" name="service_date22"  [(ngModel)]="service_date22">
+        </td>
+    </tr>
+    <tr>
+      <td>23.) Life skills support</td>
+      <td>
+        <input type="checkbox" id="checked23" name="checked23" [(ngModel)]="checked23" value="Yes">
+        <br>
+        <input type="date" id="service_date23" name="service_date23"  [(ngModel)]="service_date23">
+        </td>
+    </tr>
+    <tr>
+      <td>24.) Legal services (eg. received for GBV, Trafficking, exploitation, maltreatment etc)</td>
+      <td>
+        <input type="checkbox" id="checked24" name="checked24" [(ngModel)]="checked24" value="Yes">
+        <br>
+        <input type="date" id="service_date24" name="service_date24"  [(ngModel)]="service_date24">
+        </td>
+    </tr>
+    <tr>
+      <td>25.) Succession plan</td>
+      <td>
+        <input type="checkbox" id="checked25" name="checked25" [(ngModel)]="checked25" value="Yes">
+        <br>
+        <input type="date" id="service_date25" name="service_date25"  [(ngModel)]="service_date25">
+        </td>
+    </tr>
+    <tr>
+      <td>26.) Birth registration</td>
+      <td>
+        <input type="checkbox" id="checked26" name="checked26" [(ngModel)]="checked26" value="Yes">
+        <br>
+        <input type="date" id="service_date26" name="service_date26"  [(ngModel)]="service_date26">
+        </td>
+    </tr>
+    <tr>
+      <td>27.) Post GBV Care</td>
+      <td>
+        <input type="checkbox" id="checked27" name="checked27" [(ngModel)]="checked27" value="Yes">
+        <br>
+        <input type="date" id="service_date27" name="service_date27"  [(ngModel)]="service_date27">
+        </td>
+    </tr>
+    <tr>
+      <td>28.) Child abuse case report to police/local authority. </td>
+      <td>
+        <input type="checkbox" id="checked28" name="checked28" [(ngModel)]="checked28" value="Yes">
+        <br>
+        <input type="date" id="service_date28" name="service_date28"  [(ngModel)]="service_date28">
+        </td>
+    </tr>
+    <tr>
+      <td>29.) Participated in evidence-based intervention on preventing HIV and sexual violence</td>
+      <td>
+        <input type="checkbox" id="checked29" name="checked29" [(ngModel)]="checked29" value="Yes">
+        <br>
+        <input type="date" id="service_date29" name="service_date29"  [(ngModel)]="service_date29">
+        </td>
+    </tr>
+    <tr>
+      <td>30.) Referral (specify)</td>
+      <td>
+        <input type="checkbox" id="checked30" name="checked30" [(ngModel)]="checked30" value="Yes">
+        <br>
+        <input type="date" id="service_date30" name="service_date30"  [(ngModel)]="service_date30">
+        </td>
+    </tr>
+  </table>
+    <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>SERVICES (SCHOOLED)</th><th>CHECK/DATE</th>
+    </tr>
+    <tr>
+      <td>31.) School enrolment/re-enrolment </td>
+      <td>
+        <input type="checkbox" id="checked31" name="checked31" [(ngModel)]="checked31" value="Yes">
+        <br>
+        <input type="date" id="service_date31" name="service_date31"  [(ngModel)]="service_date31">
+        </td>
+    </tr>
+    <tr>
+      <td>32.) Waiver of school fees </td>
+      <td>
+        <input type="checkbox" id="checked32" name="checked32" [(ngModel)]="checked32" value="Yes">
+        <br>
+        <input type="date" id="service_date32" name="service_date32"  [(ngModel)]="service_date32">
+        </td>
+    </tr>
+    <tr>
+      <td>33.) Provision of school materials/uniform</td>
+      <td>
+        <input type="checkbox" id="checked33" name="checked33" [(ngModel)]="checked33" value="Yes">
+        <br>
+        <input type="date" id="service_date33" name="service_date33"  [(ngModel)]="service_date33">
+        </td>
+    </tr>
+    <tr>
+      <td>34.) Assistance/support with homework</td>
+      <td>
+        <input type="checkbox" id="checked34" name="checked34" [(ngModel)]="checked34" value="Yes">
+        <br>
+        <input type="date" id="service_date34" name="service_date34"  [(ngModel)]="service_date34">
+        </td>
+    </tr>
+    <tr>
+      <td>35.) School performance assessment</td>
+      <td>
+        <input type="checkbox" id="checked35" name="checked35" [(ngModel)]="checked35" value="Yes">
+        <br>
+        <input type="date" id="service_date35" name="service_date35"  [(ngModel)]="service_date35">
+        </td>
+    </tr>
+    <tr>
+      <td>36.) Referral (specify)</td>
+      <td>
+        <input type="checkbox" id="checked36" name="checked36" [(ngModel)]="checked36" value="Yes">
+        <br>
+        <input type="date" id="service_date36" name="service_date36"  [(ngModel)]="service_date36">
+        </td>
+    </tr>
+    <tr style="background-color:  #eb445a;">
+      <th>SERVICES (STABLE)</th><th>CHECK/DATE</th>
+    </tr>
+    <tr>
+      <td>37.) Financial Education</td>
+      <td>
+        <input type="checkbox" id="checked37" name="checked37" [(ngModel)]="checked37" value="Yes">
+        <br>
+        <input type="date" id="service_date37" name="service_date37"  [(ngModel)]="service_date37">
+        </td>
+    </tr>
+    <tr>
+      <td>38.) Access to Micro-finance</td>
+      <td>
+        <input type="checkbox" id="checked38" name="checked38" [(ngModel)]="checked38" value="Yes">
+        <br>
+        <input type="date" id="service_date38" name="service_date38"  [(ngModel)]="service_date38">
+        </td>
+    </tr>
+    <tr>
+      <td>39.) Vocational & apprenticeship training</td>
+      <td>
+        <input type="checkbox" id="checked39" name="checked39" [(ngModel)]="checked39" value="Yes">
+        <br>
+        <input type="date" id="service_date39" name="service_date39"  [(ngModel)]="service_date39">
+        </td>
+    </tr>
+    <tr>
+      <td>40.) Agricultural inputs/agricultural value chain</td>
+      <td>
+        <input type="checkbox" id="checked40" name="checked40" [(ngModel)]="checked40" value="Yes">
+        <br>
+        <input type="date" id="service_date40" name="service_date40"  [(ngModel)]="service_date40">
+        </td>
+    </tr>
+    <tr>
+      <td>41.) Cash transfer scheme</td>
+      <td>
+        <input type="checkbox" id="checked41" name="checked41" [(ngModel)]="checked41" value="Yes">
+        <br>
+        <input type="date" id="service_date41" name="service_date41"  [(ngModel)]="service_date41">
+        </td>
+    </tr>
+    <tr>
+      <td>42.) Savings group (SILC, VSLA etc.)</td>
+      <td>
+        <input type="checkbox" id="checked42" name="checked42" [(ngModel)]="checked42" value="Yes">
+        <br>
+        <input type="date" id="service_date42" name="service_date42"  [(ngModel)]="service_date42">
+        </td>
+    </tr>
+    <tr>
+      <td>43.) Short-term emergency cash support</td>
+      <td>
+        <input type="checkbox" id="checked43" name="checked43" [(ngModel)]="checked43" value="Yes">
+        <br>
+        <input type="date" id="service_date43" name="service_date43"  [(ngModel)]="service_date43">
+        </td>
+    </tr>
+    <tr>
+      <td>44.) Safe shelter-related repair or construction</td>
+      <td>
+        <input type="checkbox" id="checked44" name="checked44" [(ngModel)]="checked44" value="Yes">
+        <br>
+        <input type="date" id="service_date44" name="service_date44"  [(ngModel)]="service_date44">
+        </td>
+    </tr>
+    <tr>
+      <td>45.) Referral (specify)</td>
+      <td>
+        <input type="checkbox" id="checked45" name="checked45" [(ngModel)]="checked45" value="Yes">
+        <br>
+        <input type="date" id="service_date45" name="service_date45"  [(ngModel)]="service_date45">
+        </td>
+    </tr>
+    <tr>
+      <td>CHILD FOLLOW-UP INFORMATION</td>
+      <td colspan="2">
+        <label for="follow_upinfo_kd">Known Death</label><br>
+        <input type="radio" id="follow_upinfo_kd" name="follow_upinfo" [(ngModel)]="follow_upinfo" value="Known Death"><br />
+        <label for="follow_upinfo_mig">Migrated</label><br>
+        <input type="radio" id="follow_upinfo_mig" name="follow_upinfo" [(ngModel)]="follow_upinfo" value="Migrated"><br />
+        <label for="follow_upinfo_ltfu">Lost to Follow Up</label><br>
+        <input type="radio" id="follow_upinfo_ltfu" name="follow_upinfo" [(ngModel)]="follow_upinfo" value="Lost to Follow Up"><br />
+        <label for="follow_upinfo_18">Age >18</label><br>
+        <input type="radio" id="follow_upinfo_18" name="follow_upinfo" [(ngModel)]="follow_upinfo" value="Age >18"><br />
+        <label for="follow_upinfo_transf">Transfered</label><br>
+        <input type="radio" id="follow_upinfo_transf" name="follow_upinfo" [(ngModel)]="follow_upinfo" value="Transfered"><br />
+        </td>
+    </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr>
+    <td>Service provider Name: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="sp_name" name="sp_name" [(ngModel)]="sp_name">
+    </td>
+  </tr>	
+  <tr>
+    <td>Designation: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="designation" name="designation" [(ngModel)]="designation">
+    </td>
+  </tr>	
+  <tr>
+    <td>Phone Number: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="number" id="phoneno" name="phoneno" [(ngModel)]="phoneno">
+    </td>
+  </tr>	
+  <tr>
+    <td>Date: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="date" id="report_date" name="report_date" [(ngModel)]="report_date">
+    </td>
+  </tr>	
+</table>
+<ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
 </ion-content>
