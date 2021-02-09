@@ -1,0 +1,452 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title color="danger">
+      Vulnerable Household<sup>REFERRAL-eOVC</sup>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card-header color="tertiary">Community Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">State</span></ion-label>
+    <ion-input type="text" [(ngModel)]="state" required></ion-input>          
+    </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">LGA</span></ion-label>
+    <ion-input type="text" [(ngModel)]="lga" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Community</span></ion-label>
+    <ion-input type="text" [(ngModel)]="community" required></ion-input>          
+  </ion-item>
+  <ion-card-header color="tertiary">Referred Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Name of Person Referred</span></ion-label>
+    <ion-input type="text" [(ngModel)]="name_of_referred" required></ion-input>          
+    </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Phone Number</span></ion-label>
+    <ion-input type="number" [(ngModel)]="phone" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">SEX: </span></ion-label>
+    <select name="sex" id="sex" [(ngModel)]="sex">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>      
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">AGE: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="age_yrs" required placeholder="YEARS"></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">UNIQUE ID: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="unique_id" required placeholder="(State code / LGA code  / Org code/ HH  serial /VC serial No)"></ion-input>          
+  </ion-item>
+  <ion-item>
+    <ion-textarea id="address" name="address" [(ngModel)]="address" placeholder="Address"></ion-textarea>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Name of Referring Organization</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="referring_cbo_name">
+      <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+      <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+      <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+      <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+      <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+      <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+      <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+      <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+      <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+      <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+      <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+      <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+      <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+      <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+      <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+      <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+      <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+      <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+      <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+      <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+      <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Name of Receiving Organization</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="receiving_cbo_name">
+      <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+      <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+      <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+      <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+      <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+      <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+      <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+      <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+      <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+      <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+      <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+      <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+      <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+      <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+      <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+      <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+      <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+      <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+      <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+      <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+      <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card-header color="tertiary">SERVICES REFERRED FOR</ion-card-header>
+  <table mat-table style="width:100%; border: 1px solid black;">
+    <tr style="background-color:  #eb445a;">
+      <th>SERVICES (HEALTHY)</th><th>TICK<ion-icon name="checkmark-outline"></ion-icon></th>
+    </tr>
+    <tr>
+      <td>1. HIV-related testing (HTS, PMTCT)</td>
+      <td>
+        <input type="checkbox" id="service1" name="service1" [(ngModel)]="service1" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>2.	Early Infant Diagnosis (EID)</td>
+      <td>
+        <input type="checkbox" id="service2" name="service2" [(ngModel)]="service2" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>3.	ART</td>
+      <td>
+        <input type="checkbox" id="service3" name="service3" [(ngModel)]="service3" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>4.	CD4 VL</td>
+      <td>
+        <input type="checkbox" id="service4" name="service4" [(ngModel)]="service4" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>5.	TB diagnosis</td>
+      <td>
+        <input type="checkbox" id="service5" name="service5" [(ngModel)]="service5" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>6.	STI treatment </td>
+      <td>
+        <input type="checkbox" id="service6" name="service6" [(ngModel)]="service6" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>7.	Prevention support (PrEP/<br>condoms and/<br>or VMMC)</td>
+      <td>
+        <input type="checkbox" id="service7" name="service7" [(ngModel)]="service7" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>8.	Sexual / Reproductive health</td>
+      <td>
+        <input type="checkbox" id="service8" name="service8" [(ngModel)]="service8" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>9.	Routine healthcare (e.g. Immunization etc.)</td>
+      <td>
+        <input type="checkbox" id="service9" name="service9" [(ngModel)]="service9" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>10.	Emergency healthcare</td>
+      <td>
+        <input type="checkbox" id="service10" name="service10" [(ngModel)]="service10" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>11.	Vitamin A, Zinc & Iron supplementation</td>
+      <td>
+        <input type="checkbox" id="service11" name="service11" [(ngModel)]="service11" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>12.	Insecticide treated Nets</td>
+      <td>
+        <input type="checkbox" id="service12" name="service12" [(ngModel)]="service12" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>13.	Water treatment</td>
+      <td>
+        <input type="checkbox" id="service13" name="service13" [(ngModel)]="service13" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>14.	Food and nutrition supplement</td>
+      <td>
+        <input type="checkbox" id="service14" name="service14" [(ngModel)]="service14" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>15.	Severe Acute Malnutrition (SAM)</td>
+      <td>
+        <input type="checkbox" id="service15" name="service15" [(ngModel)]="service15" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>16.	Wasting/edema</td>
+      <td>
+        <input type="checkbox" id="service16" name="service16" [(ngModel)]="service16" value="Yes">
+        </td>
+    </tr>
+    <tr>
+      <td>17.	Other health/nutrition (specify):</td>
+      <td>
+        <input type="checkbox" id="service17" name="service17" [(ngModel)]="service17" value="Yes">
+        </td>
+    </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th>SERVICES (SAFE)</th><th>TICK<ion-icon name="checkmark-outline"></ion-icon></th>
+  </tr>
+  <tr>
+    <td>18.	Post-violence trauma-informed counselling</td>
+    <td>
+      <input type="checkbox" id="service18" name="service18" [(ngModel)]="service18" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>19.	Spiritual support</td>
+    <td>
+      <input type="checkbox" id="service19" name="service19" [(ngModel)]="service19" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>20.	Community support group (positive living group, caregiver support group, etc.)</td>
+    <td>
+      <input type="checkbox" id="service20" name="service20" [(ngModel)]="service20" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>21.	Life building skills</td>
+    <td>
+      <input type="checkbox" id="service21" name="service21" [(ngModel)]="service21" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>22.	Legal services</td>
+    <td>
+      <input type="checkbox" id="service22" name="service22" [(ngModel)]="service22" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>23.	Birth registration</td>
+    <td>
+      <input type="checkbox" id="service23" name="service23" [(ngModel)]="service23" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>24.	Post-violence medical services</td>
+    <td>
+      <input type="checkbox" id="service24" name="service24" [(ngModel)]="service24" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>25.	Emergency shelter</td>
+    <td>
+      <input type="checkbox" id="service25" name="service25" [(ngModel)]="service25" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>26.	Other services (Specify):</td>
+    <td>
+      <input type="checkbox" id="service26" name="service26" [(ngModel)]="service26" value="Yes">
+      </td>
+  </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th>SERVICES (SCHOOLED)</th><th>SPECIFY<ion-icon name="checkmark-outline"></ion-icon></th>
+  </tr>
+  <tr>
+    <td colspan="2">Specify:<br><ion-input type="text" [(ngModel)]="service27" placeholder="Write Here:" required></ion-input></td>
+  </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th>SERVICES (STABLE)</th><th>TICK<ion-icon name="checkmark-outline"></ion-icon></th>
+  </tr>
+  <tr>
+    <td>28. Vocational training</td>
+    <td>
+      <input type="checkbox" id="service28" name="service28" [(ngModel)]="service28" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>29. Microfinance</td>
+    <td>
+      <input type="checkbox" id="service29" name="service29" [(ngModel)]="service29" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>30. Private and public sector skill acquisition schemes</td>
+    <td>
+      <input type="checkbox" id="service30" name="service30" [(ngModel)]="service30" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td>31. Income Generating Activities</td>
+    <td>
+      <input type="checkbox" id="service31" name="service31" [(ngModel)]="service31" value="Yes">
+      </td>
+  </tr>
+  <tr>
+    <td colspan="2">32. Others, specify: <br><ion-input type="text" [(ngModel)]="service32" placeholder="Write Here:" required></ion-input></td>
+  </tr>
+</table>
+<ion-item>
+  <ion-textarea id="additionalcomments" name="additionalcomments" [(ngModel)]="additionalcomments" placeholder="Additional Comments"></ion-textarea>
+</ion-item>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr>
+    <td>Name of referring person: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="referrers_name" name="referrers_name" [(ngModel)]="referrers_name">
+    </td>
+  </tr>	
+  <tr>
+    <td>Designation: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="designation" name="designation" [(ngModel)]="designation">
+    </td>
+  </tr>	
+  <tr>
+    <td>Phone Number/Email: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="phoneno_email" name="phoneno_email" [(ngModel)]="phoneno_email">
+    </td>
+  </tr>	
+  <tr>
+    <td>INITIALS: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="initials" name="initials" [(ngModel)]="initials">
+    </td>
+  </tr>	
+</table>
+  <ion-card-header color="tertiary">
+    Section B:  (To be filled out by person/representative receiving the referral)
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Name of organisation providing the referral</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="org_prov_referral">
+        <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+        <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+        <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+        <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+        <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+        <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+        <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+        <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+        <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+        <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+        <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+        <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+        <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+        <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+        <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+        <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+        <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+        <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+        <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+        <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+        <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-card-content>
+  <ion-card-header color="tertiary">List of services provided - One</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">SERVICE: 1</span></ion-label>
+    <ion-input type="text" [(ngModel)]="list_service_1" required></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Services completed as requested?</span></ion-label>
+  <ion-select interface="action-sheet" [(ngModel)]="list_service_1_completed">
+    <ion-select-option value="Yes">Yes</ion-select-option>
+    <ion-select-option value="No">No</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Follow up needed?</span></ion-label>
+    <ion-select interface="action-sheet" [(ngModel)]="list_service_1_followup">
+      <ion-select-option value="Yes">Yes</ion-select-option>
+      <ion-select-option value="No">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Date:</span></ion-label>
+      <ion-input type="date" [(ngModel)]="list_service_1_date" required></ion-input>          
+    </ion-item>
+      <ion-card-header color="tertiary">List of services provided - Two</ion-card-header>
+      <ion-item lines="full">
+        <ion-label position="floating"><span style="font-weight: bold;">SERVICE: 2</span></ion-label>
+        <ion-input type="text" [(ngModel)]="list_service_2" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Services completed as requested?</span></ion-label>
+      <ion-select interface="action-sheet" [(ngModel)]="list_service_2_completed">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating"><span style="font-weight: bold;">Follow up needed?</span></ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="list_service_2_followup">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating"><span style="font-weight: bold;">Date:</span></ion-label>
+          <ion-input type="date" [(ngModel)]="list_service_2_date" required></ion-input>          
+        </ion-item>
+        <ion-item>
+          <ion-textarea id="additionalcomments_section_b" name="additionalcomments_section_b" [(ngModel)]="additionalcomments_section_b" placeholder="Additional Comments"></ion-textarea>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating"><span style="font-weight: bold;">Referral Completed?</span></ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="referral_complete">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+      </ion-item>
+      <table mat-table style="width:100%; border: 1px solid black;">
+        <tr>
+          <td>Name of person receiving referral form: </td>
+          <td>
+            <input style="margin: 0px; width: 153px;" type="text" id="name_of_referral_receiver" name="name_of_referral_receiver" [(ngModel)]="name_of_referral_receiver">
+          </td>
+        </tr>	
+        <tr>
+          <td>Designation: </td>
+          <td>
+            <input style="margin: 0px; width: 153px;" type="text" id="designation_of_referral_receiver" name="designation_of_referral_receiver" [(ngModel)]="designation_of_referral_receiver">
+          </td>
+        </tr>	
+        <tr>
+          <td>Phone Number: </td>
+          <td>
+            <input style="margin: 0px; width: 153px;" type="number" id="phoneno_of_referral_receiver" name="phoneno_of_referral_receiver" [(ngModel)]="phoneno_of_referral_receiver">
+          </td>
+        </tr>	
+        <tr>
+          <td>INITIALS: </td>
+          <td>
+            <input style="margin: 0px; width: 153px;" type="text" id="initials_of_referral_receiver" name="initials_of_referral_receiver" [(ngModel)]="initials_of_referral_receiver">
+          </td>
+        </tr>	
+      </table>
+      <ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
+    </ion-content>

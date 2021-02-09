@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'vulnerablechildren',
     loadChildren: () => import('./pages/vulnerablechildren/vulnerablechildren.module').then( m => m.VulnerablechildrenPageModule)
+  },
+  {
+    path: 'vulnerablehouseholdref',
+    loadChildren: () => import('./pages/vulnerablehouseholdref/vulnerablehouseholdref.module').then( m => m.VulnerablehouseholdrefPageModule)
   }
 ];
 @NgModule({

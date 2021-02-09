@@ -38,6 +38,14 @@ export class Tab1Page {
     this.navController.navigateForward('vulnerablechildren');
     loading.dismiss();
   }
+  async gotoVHRF(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading HH Referral Form...',
+  });
+  await loading.present();
+    this.navController.navigateForward('vulnerablehouseholdref');
+    loading.dismiss();
+  }
   initDB(){
     this.sqlite.create({
       name: 'eovc.db',
