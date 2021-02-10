@@ -60,6 +60,10 @@ export class Tab1Page {
         .then(res => {
           console.log('Vulnerable Children Table Created');
         }).catch(e => console.log(e));
+        db.executeSql('CREATE TABLE IF NOT EXISTS vulnerablehousehold(id INTEGER PRIMARY KEY AUTOINCREMENT,state TEXT,lga TEXT,community TEXT,name_of_referred TEXT,phone TEXT,sex TEXT,age_yrs TEXT,unique_id TEXT,address TEXT,referring_cbo_name TEXT,receiving_cbo_name TEXT,service1 TEXT,service2 TEXT,service3 TEXT,service4 TEXT,service5 TEXT,service6 TEXT,service7 TEXT,service8 TEXT,service9 TEXT,service10 TEXT,service11 TEXT,service12 TEXT,service13 TEXT,service14 TEXT,service15 TEXT,service16 TEXT,service17 TEXT,service18 TEXT,service19 TEXT,service20 TEXT,service21 TEXT,service22 TEXT,service23 TEXT,service24 TEXT,service25 TEXT,service26 TEXT,service27 TEXT,service28 TEXT,service29 TEXT,service30 TEXT,service31 TEXT,service32 TEXT,additionalcomments TEXT,referrers_name TEXT,designation TEXT,phoneno_email TEXT,initials TEXT,org_prov_referral TEXT,list_service_1 TEXT,list_service_1_completed TEXT,list_service_1_followup TEXT,list_service_1_date TEXT,list_service_2 TEXT,list_service_2_completed TEXT,list_service_2_followup TEXT,list_service_2_date TEXT,additionalcomments_section_b TEXT,referral_complete TEXT,name_of_referral_receiver TEXT,designation_of_referral_receiver TEXT,phoneno_of_referral_receiver TEXT,initials_of_referral_receiver TEXT)', [])
+        .then(res => {
+          console.log('Vulnerable Household Table Created');
+        }).catch(e => console.log(e));
       })
       .catch(e => console.log(e));
   }
