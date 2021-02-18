@@ -1,0 +1,291 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title class="wrap-text" color="danger">
+      <div style="word-wrap: break-word; font-size: small;">
+        COMMUNITY BASED PAEDIATRIC/<br>ADOLESCENT (0-17 YEARS)<br> HIV TESTING SCREENING CHECKLIST<sup>eOVC</sup>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card-header color="tertiary">Facility Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">State</span></ion-label>
+    <ion-input type="text" [(ngModel)]="state" required></ion-input>          
+    </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">LGA</span></ion-label>
+    <ion-input type="text" [(ngModel)]="lga" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Facility</span></ion-label>
+    <ion-input type="text" [(ngModel)]="facility" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Ward</span></ion-label>
+    <ion-input type="text" [(ngModel)]="ward" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Community</span></ion-label>
+    <ion-input type="text" [(ngModel)]="community" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Organization Name</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="cbo_name">
+      <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+      <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+      <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+      <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+      <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+      <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+      <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+      <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+      <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+      <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+      <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+      <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+      <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+      <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+      <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+      <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+      <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+      <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+      <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+      <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+      <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card-header color="tertiary">Child's Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">UNIQUE ID: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="unique_id" required placeholder="(State code / LGA code  / Org code/ HH  serial /VC serial No)"></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Child's Name: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="name_of_child" required ></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">SEX: </span></ion-label>
+    <select name="sex" id="sex" [(ngModel)]="sex">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>      
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">AGE: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="age_yrs" required placeholder="YEARS"></ion-input>          
+    <ion-input type="text" [(ngModel)]="age_mths" required placeholder="MONTHS"></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Date of Assessment: </span></ion-label>
+    <ion-input type="date" [(ngModel)]="assessment_date" required ></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Relationship of Respondent to Child: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="rship_of_respondent_child" required ></ion-input>          
+  </ion-item>
+  <ion-card-header color="tertiary">INSTRUCTIONS</ion-card-header>
+<ion-item>
+  INSTRUCTIONS:<br>
+1.	Please use one checklist per child<br>
+2.	Ask all the questions as applicable <br>
+3.	After the assessment, if child reports YES to at least one risk factor below (Child at risk), offer/refer for HIV testing and tick ‘YES’ at the bottom of the form. If not, tick ‘NO’ at the bottom of the form and work with the care giver during posttest counseling to develop a risk reduction plan.<br>
+4.	All children at risk aged 0-18months should be referred for EID services.<br>
+5.	All children 0-14 years will respond to questions in Section A ONLY through their parents/ caregiver<br>
+6.	All adolescents 15-17 years will respond to questions in BOTH SECTION A and B <br>
+</ion-item>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr style="background-color:  #eb445a;">
+    <th colspan="2">SECTION A</th>
+  </tr>
+  <tr style="background-color:  #f78d9b;">
+    <th>All Children (0-17 years of age)</th>
+    <th>Y/N/Dont Know</th>
+  </tr>
+  <tr>
+    <td rowspan="2"><span style="font-weight: bold;">1.) Is the child/adolescent’s caregiver/biological parent: </span><br>A.	HIV-positive?<br><span style="background-color: #d4cccc">B.)	Having a long-standing sickness (frequent hospital visits/admissions, frequent use of medicines)?</span></td>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">A</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_1a">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+        </td>
+  </tr>
+  <tr>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">B</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_1b">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2.)	Does the child/adolescent have a sibling that is: <br>A.	HIV-positive?<br><span style="background-color: #d4cccc">B.)	Having a long-standing sickness (frequent hospital visits/admissions, frequent use of medicines)</span></td>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">A</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_2a">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+        </td>
+  </tr>
+  <tr>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">B</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_2b">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2">3.) In the last three months, has this child/adolescent: <br>A.	Been sick (e.g. frequent hospital visits/admissions, frequent use of medicines)<br><span style="background-color: #d4cccc">B.)	Has had  ≥ 2 of following: Frequent Cough, longstanding Fever,  longstanding Diarrhoea, Loss of weight//poor weight gain, longstanding/ frequent skin rash</span></td>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">A</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_3a">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+        </td>
+  </tr>
+  <tr>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">B</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_3b">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+      </td>
+  </tr>
+  <tr>
+    <td>4.	Has the child/adolescent ever had Tuberculosis (TB) in the past?</td>
+    <td>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_4">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">5.) Has the child: <br>A.	ever received blood transfusion<br><span style="background-color: #d4cccc">B.)	had any of the following in the last 3 months: circumcision, ear piercing, scarification, injection/drip outside the hospital </span></td>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">A</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_5a">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+        </td>
+  </tr>
+  <tr>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">B</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_5b">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2">6.) Has the child/adolescent ever been: <br>A. Forced to have sex (any form)?<br><span style="background-color: #d4cccc">B.)	Pregnant (female children)? </span></td>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">A</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_6a">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+        </td>
+  </tr>
+  <tr>
+    <td>
+      <ion-label position="floating"><span style="font-weight: bold;">B</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectiona_6b">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+      </td>
+  </tr>
+  <tr>
+<th colspan="2" style="background-color:  #eb445a;">Section B [ To be completed for 15-17 only in addition to section A] </th>
+  </tr>
+  <tr>
+    <td>7.	Have you ever had sex in the past? (anal, vaginal  or oral)</td>
+    <td>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectionb_7">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+    </td>
+  </tr>
+  <tr>
+    <td>8.	Have you experienced painful urination, lower abdominal pain, vaginal or penile discharge in the past?</td>
+    <td>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectionb_8">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+    </td>
+  </tr>
+  <tr>
+    <td>9.	Have you ever injected drugs, shared needles or other sharp objects in the past?</td>
+    <td>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="sectionb_9">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+        <ion-select-option value="Dont Know">Dont Know</ion-select-option>
+      </ion-select>
+    </td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; font-style: italic; color: red;">CHILD ADOLESCENT AT RISK?</td>
+    <td>
+      <ion-select interface="action-sheet" placeholder="Select" [(ngModel)]="child_at_risk">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+      </ion-select>
+    </td>
+  </tr>
+</table>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr>
+    <td>Service provider Name: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="sp_name" name="sp_name" [(ngModel)]="sp_name">
+    </td>
+  </tr>	
+  <tr>
+    <td>Designation: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="designation" name="designation" [(ngModel)]="designation">
+    </td>
+  </tr>	
+  <tr>
+    <td>Phone Number: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="number" id="phoneno" name="phoneno" [(ngModel)]="phoneno">
+    </td>
+  </tr>	
+  <tr>
+    <td>Date: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="date" id="report_date" name="report_date" [(ngModel)]="report_date">
+    </td>
+  </tr>	
+</table>
+<ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
+</ion-content>

@@ -1,0 +1,242 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-border">
+    <ion-title class="wrap-text" color="danger">
+      <div style="word-wrap: break-word; font-size: small;">
+        STATUS UPDATE<sup>eOVC</sup>FORM
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card-header color="tertiary">Facility Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">State</span></ion-label>
+    <ion-input type="text" [(ngModel)]="state" required></ion-input>          
+    </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">LGA</span></ion-label>
+    <ion-input type="text" [(ngModel)]="lga" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Facility</span></ion-label>
+    <ion-input type="text" [(ngModel)]="facility" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Ward</span></ion-label>
+    <ion-input type="text" [(ngModel)]="ward" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Community</span></ion-label>
+    <ion-input type="text" [(ngModel)]="community" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Organization Name</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="Name of CBO" [(ngModel)]="cbo_name">
+      <ion-select-option value="African Health Project (AHP)">African Health Project (AHP)</ion-select-option>
+      <ion-select-option value="Anglican Diocesan Development Society (ADDS)">Anglican Diocesan Development Society (ADDS)</ion-select-option>
+      <ion-select-option value="Association of Grassroots Counsellors on Health and Development (AGCOD)">Association of Grassroots Counsellors on Health and Development (AGCOD)</ion-select-option>
+      <ion-select-option value="Caritas Gboko">Caritas Gboko</ion-select-option>
+      <ion-select-option value="Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)">Catholic Action Group on HIV/AIDS, Diocese of Otukpo (CAGHADO)</ion-select-option>
+      <ion-select-option value="Centre for Community Resource, Health and Social Development (CCRHSD)">Centre for Community Resource, Health and Social Development (CCRHSD)</ion-select-option>
+      <ion-select-option value="Community Life Advancement Project (CLAP)">Community Life Advancement Project (CLAP)</ion-select-option>
+      <ion-select-option value="Community Links and Human Empowerment Initiatives (CLHEI)">Community Links and Human Empowerment Initiatives (CLHEI)</ion-select-option>
+      <ion-select-option value="Ebo Centre for Community Empowerment and Sustainable Development (EBO)">Ebo Centre for Community Empowerment and Sustainable Development (EBO)</ion-select-option>
+      <ion-select-option value="Emmanuel Teryila Memorial Liberty Foundation (ETMLF)">Emmanuel Teryila Memorial Liberty Foundation (ETMLF)</ion-select-option>
+      <ion-select-option value="First Step Action for Children Initiative (FSACI)">First Step Action for Children Initiative (FSACI)</ion-select-option>
+      <ion-select-option value="Foundation for Justice, Development and Peace (FJDP)">Foundation for Justice, Development and Peace (FJDP)</ion-select-option>
+      <ion-select-option value="Foundation for Resilient Empowerment and Development (FRED)">Foundation for Resilient Empowerment and Development (FRED)</ion-select-option>
+      <ion-select-option value="Gboko Diocesan Health Care Initiative (GDHCI)">Gboko Diocesan Health Care Initiative (GDHCI)</ion-select-option>
+      <ion-select-option value="Global Health and Development Initiative (GLOHAD)">Global Health and Development Initiative (GLOHAD)</ion-select-option>
+      <ion-select-option value="Hope and Care Foundation (HCF)">Hope and Care Foundation (HCF)</ion-select-option>
+      <ion-select-option value="Integrated Health Program (IHP)">Integrated Health Program (IHP)</ion-select-option>
+      <ion-select-option value="JASPI Health and Gender Development Initiatives (JASPI)">JASPI Health and Gender Development Initiatives (JASPI)</ion-select-option>
+      <ion-select-option value="Mimidoo Ininitiative for Empowerment and Development (MIED)">Mimidoo Ininitiative for Empowerment and Development (MIED)</ion-select-option>
+      <ion-select-option value="OSA Foundation (OSA)">OSA Foundation (OSA)</ion-select-option>
+      <ion-select-option value="Women, Children Health and Community Development (WOCHAD)">Women, Children Health and Community Development (WOCHAD)</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card-header color="tertiary">Child's Details</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">UNIQUE ID: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="unique_id" required placeholder="(State code / LGA code  / Org code/ HH  serial /VC serial No)"></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Child's Name: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="name_of_child" required ></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">SEX: </span></ion-label>
+    <select name="sex" id="sex" [(ngModel)]="sex">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>      
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label ><span style="font-weight: bold;">AGE: </span></ion-label>
+    <ion-input type="text" [(ngModel)]="age_yrs" required placeholder="YEARS"></ion-input>          
+    <ion-input type="text" [(ngModel)]="age_mths" required placeholder="MONTHS"></ion-input>          
+  </ion-item>
+  <ion-item>
+    <ion-textarea id="address" name="address" [(ngModel)]="address" placeholder="Address of Child"></ion-textarea>
+  </ion-item>
+  <ion-card-header color="tertiary">LAST KNOWN HIV STATUS</ion-card-header>
+  <ion-item lines="full">
+    <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="lastknownhivstatus">
+      <ion-select-option value="HIV Status Unknown">HIV Status Unknown</ion-select-option>
+      <ion-select-option value="HIV Negative">HIV Negative</ion-select-option>
+      <ion-select-option value="HIV Positive">HIV Positive</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card-header color="tertiary">NEW HIV STATUS</ion-card-header>
+  <ion-item lines="full">
+    <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="newhivstatus">
+      <ion-select-option value="Test not required based on HRA">Test not required based on HRAn</ion-select-option>
+      <ion-select-option value="HIV Status Unknown">HIV Status Unknown</ion-select-option>
+      <ion-select-option value="HIV Negative">HIV Negative</ion-select-option>
+      <ion-select-option value="HIV Positive">HIV Positive</ion-select-option>
+    </ion-select>
+  </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">Date of HIV Test</span></ion-label>
+      <ion-input type="date" [(ngModel)]="hiv_test_date" required></ion-input>          
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating"><span style="font-weight: bold;">IF HIV Positive, Is Child enrolled on ART?</span></ion-label>
+      <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="childenrolledonart">
+        <ion-select-option value="Yes">Yes</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+      </ion-select>
+      <ion-label position="floating"><span style="font-weight: bold;">Date of ART Enrollment</span></ion-label>
+      <ion-input type="date" [(ngModel)]="art_enroldate" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">HEI/ART UID No</span></ion-label>
+    <ion-input type="text" [(ngModel)]="heiart_uid_no" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Name of Facility</span></ion-label>
+    <ion-input type="text" [(ngModel)]="facilityname" required></ion-input>          
+  </ion-item>
+  <ion-card-header color="tertiary">CURRENT BIRTH REGISTRATION AND EDUCATION STATUS</ion-card-header>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Does the Child have a Birth registration Certificate?</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="birthregcertificate">
+      <ion-select-option value="Yes">Yes</ion-select-option>
+      <ion-select-option value="No">No</ion-select-option>
+    </ion-select>
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Is the Child in School?</span></ion-label>
+  <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="childinschool">
+    <ion-select-option value="Yes">Yes</ion-select-option>
+    <ion-select-option value="No">No</ion-select-option>
+  </ion-select>
+  <ion-input type="text" [(ngModel)]="name_of_sch" required placeholder="Name of School"></ion-input>          
+  <ion-input type="text" [(ngModel)]="name_of_class" required placeholder="Name of Class"></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Is the Child on Vocational Training?</span></ion-label>
+  <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="childonvocational">
+    <ion-select-option value="Yes">Yes</ion-select-option>
+    <ion-select-option value="No">No</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">If Yes, Name of Vocational Training Center?</span></ion-label>
+  <ion-input type="text" [(ngModel)]="name_of_vocational_center" required placeholder="Name of Vocational Center"></ion-input>          
+</ion-item>
+<ion-card-header color="danger">CAREGIVER INFORMATION</ion-card-header>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Name of Caregiver</span></ion-label>
+  <ion-input type="text" [(ngModel)]="caregiver_name" required placeholder="Name of caregiver"></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">SEX</span></ion-label>
+  <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="caregiver_sex">
+    <ion-select-option value="Male">Male</ion-select-option>
+    <ion-select-option value="Female">Female</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Age(Years)</span></ion-label>
+  <ion-input type="number" [(ngModel)]="caregiver_age" required></ion-input>          
+</ion-item>
+<ion-item>
+  <ion-textarea id="caregiver_address" name="caregiver_address" [(ngModel)]="caregiver_address" placeholder="Address"></ion-textarea>
+</ion-item>
+<ion-card-header color="danger">LAST KNOWN HIV STATUS</ion-card-header>
+<ion-item lines="full">
+  <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="caregiver_lastknownhivstatus">
+    <ion-select-option value="HIV Status Unknown">HIV Status Unknown</ion-select-option>
+    <ion-select-option value="HIV Negative">HIV Negative</ion-select-option>
+    <ion-select-option value="HIV Positive">HIV Positive</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-card-header color="danger">NEW HIV STATUS</ion-card-header>
+<ion-item lines="full">
+  <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="caregiver_newhivstatus">
+    <ion-select-option value="Test not required based on HRA">Test not required based on HRAn</ion-select-option>
+    <ion-select-option value="HIV Status Unknown">HIV Status Unknown</ion-select-option>
+    <ion-select-option value="HIV Negative">HIV Negative</ion-select-option>
+    <ion-select-option value="HIV Positive">HIV Positive</ion-select-option>
+  </ion-select>
+</ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">Date of HIV Test</span></ion-label>
+    <ion-input type="date" [(ngModel)]="caregiver_hiv_test_date" required></ion-input>          
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating"><span style="font-weight: bold;">IF HIV Positive, Is Caregiver enrolled on ART?</span></ion-label>
+    <ion-select interface="action-sheet" placeholder="SELECT ONE" [(ngModel)]="caregiver_enrolledonart">
+      <ion-select-option value="Yes">Yes</ion-select-option>
+      <ion-select-option value="No">No</ion-select-option>
+    </ion-select>
+    <ion-label position="floating"><span style="font-weight: bold;">Date of ART Enrollment/Visit</span></ion-label>
+    <ion-input type="date" [(ngModel)]="caregiver_art_enroldate" required></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">If on ART, Name of Facility</span></ion-label>
+  <ion-input type="text" [(ngModel)]="caregiver_facilityname" required></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">ART UID No</span></ion-label>
+  <ion-input type="text" [(ngModel)]="caregiver_art_uid_no" required></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Caregivers Tel:</span></ion-label>
+  <ion-input type="number" [(ngModel)]="caregiver_tel" required></ion-input>          
+</ion-item>
+<ion-item lines="full">
+  <ion-label position="floating"><span style="font-weight: bold;">Occupation:</span></ion-label>
+  <ion-input type="number" [(ngModel)]="caregiver_occupation" required></ion-input>          
+</ion-item>
+<table mat-table style="width:100%; border: 1px solid black;">
+  <tr>
+    <td>Service provider Name: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="sp_name" name="sp_name" [(ngModel)]="sp_name">
+    </td>
+  </tr>	
+  <tr>
+    <td>Designation: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="text" id="designation" name="designation" [(ngModel)]="designation">
+    </td>
+  </tr>	
+  <tr>
+    <td>Phone Number: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="number" id="phoneno" name="phoneno" [(ngModel)]="phoneno">
+    </td>
+  </tr>	
+  <tr>
+    <td>Date: </td>
+    <td>
+      <input style="margin: 0px; width: 153px;" type="date" id="report_date" name="report_date" [(ngModel)]="report_date">
+    </td>
+  </tr>	
+</table>
+<ion-button expand="round" expand="full" color="tertiary" (click)="submit()">SUBMIT</ion-button>
+
+</ion-content>
